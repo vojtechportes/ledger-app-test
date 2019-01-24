@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/@types/*", "*"],
+      "src/*": ["src/*"]
+    },
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "rootDirs": ["./", "src"],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    // we want this, but atm there is so many error to fix
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".expo",
+    "assets",
+    "lib"
+  ]
+}
