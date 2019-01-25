@@ -64,7 +64,6 @@ class OperationsList extends React.PureComponent<IProps, IState> {
   }
 
   private handleScroll = (e: any) => {
-    console.log(e);
     const currentOffset = e.nativeEvent.contentOffset.y;
     const scrollDirection =
       currentOffset > this.scrollOffset

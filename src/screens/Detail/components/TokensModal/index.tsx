@@ -1,11 +1,12 @@
 import * as React from "react";
-import { View, Modal, Button, ScrollView } from "react-native";
+import { View, Modal, Button /*, ScrollView */ } from "react-native";
 import styled, { colors } from "../../../../theme/index";
 
 // tslint:disable-next-line no-empty
 const noop = () => {};
 
 const Content: any = styled(View)`
+  flex: 1;
   padding-top: 20;
   padding-right: 20;
   padding-bottom: 20;
@@ -33,9 +34,7 @@ const TokensModal: React.SFC<IProps> = ({ children, isVisible, onClose }) => (
       <ButtonWrapper>
         <Button title="Close" color={colors.blue} onPress={onClose} />
       </ButtonWrapper>
-      <ScrollView>
-        {children}
-      </ScrollView>
+      {children}
     </Content>
   </Modal>
 );

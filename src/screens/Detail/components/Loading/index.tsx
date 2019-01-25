@@ -18,18 +18,22 @@ const StyledList: any = styled(View)`
 // tslint:disable-next-line no-empty
 const noop = () => {};
 
-const LoadingItemTop = () => (
-  <ItemTopWrapper>
+const LoadingItemTop: React.SFC<{ isLast?: boolean }> = ({ isLast }) => (
+  <ItemTopWrapper isLast={isLast}>
     <LoadingItem height={16} />
   </ItemTopWrapper>
 );
+
+LoadingItemTop.defaultProps = {
+  isLast: false
+};
 
 const LoadingGroupTop = () => (
   <>
     <StyledList>
       <LoadingItemTop />
       <LoadingItemTop />
-      <LoadingItemTop />
+      <LoadingItemTop isLast={true} />
     </StyledList>
     <Button title="Show all tokens" disabled={true} onPress={noop} />
   </>
@@ -38,7 +42,7 @@ const LoadingGroupTop = () => (
 const LoadingItemBottom = () => (
   <ItemBottomWrapper>
     <ItemBottomLeft>
-      <LoadingItem width={90} height={16} />
+      <LoadingItem width={140} height={16} />
     </ItemBottomLeft>
     <View>
       <LoadingItem width={90} height={16} />

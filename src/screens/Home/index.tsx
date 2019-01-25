@@ -135,7 +135,6 @@ class Home extends React.PureComponent<
       [
         {
           text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
           style: "cancel"
         },
         { text: "OK", onPress: () => this.props.deleteAddress(id) }

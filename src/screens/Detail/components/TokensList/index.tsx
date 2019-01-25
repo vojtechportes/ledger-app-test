@@ -7,7 +7,9 @@ import styled, { css, colors } from "../../../../theme/index";
 export const StyledListCss: any = css`
   margin-bottom: 10;
   border-color: ${({ theme }) => theme.colors.gray2};
+  border-top-width: 1;
   border-right-width: 1;
+  border-bottom-width: 1;
   border-left-width: 1;
   border-radius: 3;
 `;
@@ -44,6 +46,8 @@ class TokensList extends React.PureComponent<IProps> {
       processedData = processedData.slice(0, 3);
     }
 
+    const processedDataLength = processedData.length;
+
     return (
       <>
         <StyledList
@@ -51,7 +55,7 @@ class TokensList extends React.PureComponent<IProps> {
           // tslint:disable-next-line jsx-no-lambda
           keyExtractor={(item: any, index: any) => index.toString()}
           // tslint:disable-next-line jsx-no-lambda
-          renderItem={({ item }: any) => <ListItem value={item} />}
+          renderItem={({ item, index }: any) => <ListItem value={item} isLast={processedDataLength === index +1} />}
         />
         {!showAll && (
           <Button
