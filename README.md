@@ -1,5 +1,7 @@
 # ledger-app-test
 
+Deployed here: https://expo.io/@vojtechportes/ledger-app-test
+
 Few notes
 
 1) I didn't try the app on iOS, because I don't have any Apple device, but I hope it will work
